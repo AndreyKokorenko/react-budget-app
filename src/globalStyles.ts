@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -29,6 +30,8 @@ aside {
 }
 html,
 body {	
+  font-family: 'Inter', sans-serif;
+  background: #1E3542;
   height: 100%;
   width: 100%;
   font-size: 100%;

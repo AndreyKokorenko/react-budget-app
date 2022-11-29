@@ -1,5 +1,14 @@
-import { Badge } from "./components/Badge/Badge";
+import { Budget } from "./components/Budget/Budget";
+import { Expenses } from "./components/Expenses/Expenses";
+import { Form } from "./components/Form/Form";
+import { Container } from "./styles";
 
 export const App = () => {
-  return <Badge />;
+  return (
+    <Container>
+      <Budget />
+      <Expenses />
+      <Form />
+    </Container>
+  );
 };

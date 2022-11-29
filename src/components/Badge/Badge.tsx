@@ -1,3 +1,5 @@
+import { StyledBadge } from "./styles";
+
 export const Badge = () => {
-  return <div>Hello</div>;
+  return <StyledBadge />;
 };

@@ -1,3 +1,5 @@
-export interface IProps {
-
+export enum Currency {
+  USD = "$",
+  EUR = "€",
+  GBR = "£",
 }
