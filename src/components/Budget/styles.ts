@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const StyledBudget = styled.div`
-	width: 100%;
 `;
 
 const HeaderBudget = styled.div`

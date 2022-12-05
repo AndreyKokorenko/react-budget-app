@@ -1,16 +1,12 @@
 import Select, { SingleValue } from "react-select";
 import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
+import { ICurrency } from "../../context/CurrencyContext/types";
 import { styles } from "./styles";
 
-interface ISelectProps {
-  isSearchable: boolean;
-  isMulti: boolean;
-}
-
-export const CustomSelect = (props: ISelectProps) => {
+export const CustomSelect = () => {
   const { currencies, curentCurrency, setNewCurrency } = useCurrencyContext();
 
-  const handleSelect = (option: any) => {
+  const handleSelect = (option: SingleValue<ICurrency>) => {
     if (option) {
       setNewCurrency(option);
     }
@@ -20,9 +16,10 @@ export const CustomSelect = (props: ISelectProps) => {
     <Select
       options={currencies}
       value={curentCurrency}
-      {...props}
       styles={styles}
       onChange={handleSelect}
+      isMulti={false}
+      isSearchable={false}
     />
   );
 };

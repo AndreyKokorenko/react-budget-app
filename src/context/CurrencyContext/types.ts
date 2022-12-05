@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Currency } from "../../types/types";
+import { Currency } from "../../config/currency";
 
 interface ICurrencyContextProviderProps {
   children: ReactNode;

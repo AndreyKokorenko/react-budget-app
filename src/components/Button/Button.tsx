@@ -2,9 +2,10 @@ import { Children, ReactNode } from "react";
 import { StyledButton } from "./styles";
 
 interface IProps {
-  children: ReactNode;
+  type: "button" | "submit";
+  label: string;
 }
 
-export const Button = (props: IProps) => {
-  return <StyledButton>{props.children}</StyledButton>;
+export const Button = ({type, label}: IProps) => {
+  return <StyledButton type={type}>{label}</StyledButton>;
 };

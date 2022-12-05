@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 30px auto;
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-row-gap: 30px;
+  margin: auto;
+
+  background-color: white;
   width: 375px;
-  background: white;
+  padding: 30px 20px 43px;
 `;
 
-export { Container };
+export { Wrapper };

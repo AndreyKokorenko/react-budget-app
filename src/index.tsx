@@ -1,14 +1,17 @@
 import ReactDOM from "react-dom/client";
 import { App } from "./App";
+import { AppContext } from "./context/AppContext";
+import { BudgetContextProvider } from "./context/BudgetContext";
 import { CurrencyContextProvider } from "./context/CurrencyContext/CurrencyContext";
-import GlobalStyles from "./globalStyles";
+import { ExpensesContextProvider } from "./context/ExpensesContext/ExpensesContext";
+import GlobalStyles from "./ui/globalStyles";
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
-  <CurrencyContextProvider>
+  <AppContext
+    components={[CurrencyContextProvider, ExpensesContextProvider, BudgetContextProvider]}
+  >
     <GlobalStyles />
     <App />
-  </CurrencyContextProvider>
+  </AppContext>
 );

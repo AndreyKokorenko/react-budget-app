@@ -1,14 +1,12 @@
 import { ReactNode } from "react";
-import { StyledRemainder } from "./styles";
+import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
+import { StyledRemainder, Title } from "./styles";
 
-interface IProps {
-  children: ReactNode;
-}
-
-export const Remainder = (props: IProps) => {
+export const Remainder = () => {
+  const { curentCurrency } = useCurrencyContext();
   return (
     <StyledRemainder>
-      <h1>{props.children}</h1>
+      <Title>Remaining: {curentCurrency.value}</Title>
     </StyledRemainder>
   );
 };

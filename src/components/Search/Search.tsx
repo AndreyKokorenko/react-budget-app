@@ -2,10 +2,8 @@ import { ChangeEvent } from "react";
 import { StyledSearch } from "./styles";
 
 interface IProps {
-  type: string;
+  type: "search";
   placeholder: string;
-//   value: string;
-//   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const Search = (props: IProps) => {

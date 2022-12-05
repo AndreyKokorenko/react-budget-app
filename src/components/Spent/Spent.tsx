@@ -1,14 +1,12 @@
 import { ReactNode } from "react";
-import { StyledSpent } from "./styles";
+import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
+import { StyledSpent, Title } from "./styles";
 
-interface IProps {
-  children: ReactNode;
-}
-
-export const Spent = (props: IProps) => {
+export const Spent = () => {
+  const { curentCurrency } = useCurrencyContext();
   return (
     <StyledSpent>
-      <h1>{props.children}</h1>
+      <Title>Spent so far: {curentCurrency.value}</Title>
     </StyledSpent>
   );
 };

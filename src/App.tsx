@@ -1,14 +1,14 @@
 import { Budget } from "./components/Budget/Budget";
 import { Expenses } from "./components/Expenses/Expenses";
 import { Form } from "./components/Form/Form";
-import { Container } from "./styles";
+import { Wrapper } from "./styles";
 
 export const App = () => {
   return (
-    <Container>
+    <Wrapper>
       <Budget />
       <Expenses />
       <Form />
-    </Container>
+    </Wrapper>
   );
 };

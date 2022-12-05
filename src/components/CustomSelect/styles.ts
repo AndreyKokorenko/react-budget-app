@@ -1,12 +1,12 @@
 import { StylesConfig } from "react-select";
+import { ICurrency } from "../../context/CurrencyContext/types";
 
-export const styles: StylesConfig = {
+export const styles: StylesConfig<ICurrency> = {
   control: (baseStyles) => ({
     ...baseStyles,
     border: "1px solid #EEEEEE",
     width: "73px",
     height: "30px",
-    margin: "0 20px 0 0",
     borderRadius: "5px",
   }),
   menu: (baseStyles) => ({
