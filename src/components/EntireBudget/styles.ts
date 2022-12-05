@@ -6,6 +6,7 @@ const StyledEntireBudget = styled.div`
   justify-content: space-between;
   height: 100px;
   margin: 30px auto 0;
+  
   background: #7cc6fe;
   border-radius: 10px;
 `;

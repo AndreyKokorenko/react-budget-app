@@ -13,7 +13,7 @@ interface IExpense {
 interface IExpensesContext {
   expenses: IExpense[];
   newExpense: (expense: IExpense) => void;
-  removeExpense: (id: string) => void;
+  removeExpenseItem: (id: string) => void;
 }
 
 export type { IExpensesContext, IExpense, IExpensesContextProviderProps };

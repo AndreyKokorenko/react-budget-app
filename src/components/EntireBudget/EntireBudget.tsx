@@ -2,22 +2,22 @@ import { useState } from "react";
 import { useBudgetContext } from "../../context/BudgetContext";
 import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
 import { useInput } from "../../hooks/useInput";
-import { EditBudgeInput } from "../AddBudgetInput/AddBudgetInput";
+import { AddBudgeInput } from "../AddBudgetInput/AddBudgetInput";
 import { EditButton, StyledEntireBudget, Title } from "./styles";
 
 export const EntireBudget = () => {
   const { curentCurrency } = useCurrencyContext();
   const { budget, setNewBudget } = useBudgetContext();
   const [label, setLabel] = useState("Edit");
-  const [isEdit, setIsEdit] = useState(true);
+  const [isEdit, setIsEdit] = useState(false);
   const enteredBudget = useInput();
 
   const handleGetValue = () => {
     setNewBudget(+enteredBudget.value);
   };
 
-  const Rendercontent = (): JSX.Element => {
-    if (isEdit) {
+  const renderContent = (): JSX.Element => {
+    if (!isEdit) {
       return (
         <Title>
           Budget: {curentCurrency.value}
@@ -26,7 +26,7 @@ export const EntireBudget = () => {
       );
     }
 
-    return <EditBudgeInput type={"number"} placeholder={"Enter budget ..."} {...enteredBudget} />;
+    return <AddBudgeInput type={"number"} placeholder={"Enter budget ..."} {...enteredBudget} />;
   };
 
   const handleEnterBudget = () => {
@@ -36,7 +36,7 @@ export const EntireBudget = () => {
   };
   return (
     <StyledEntireBudget>
-      {Rendercontent()}
+      {renderContent()}
       <EditButton type="button" onClick={handleEnterBudget}>
         {label}
       </EditButton>

@@ -4,16 +4,16 @@ import { IExpensesContext, IExpensesContextProviderProps } from "./types";
 const ExpensesContext = createContext<IExpensesContext>({} as IExpensesContext);
 
 const useExpensesContextValue = () => {
-  const [expensesContext, setSxpensesContext] = useState<IExpensesContext>(() => ({
+  const [expensesContext, setExpensesContext] = useState<IExpensesContext>(() => ({
     expenses: [],
     newExpense: (newExpense) => {
-      setSxpensesContext((context) => ({
+      setExpensesContext((context) => ({
         ...context,
         expenses: [...context.expenses, newExpense],
       }));
     },
-    removeExpense: (id) => {
-      setSxpensesContext((context) => ({
+    removeExpenseItem: (id) => {
+      setExpensesContext((context) => ({
         ...context,
         expenses: context.expenses.filter((expense) => expense.id !== id),
       }));

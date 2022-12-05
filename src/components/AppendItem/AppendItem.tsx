@@ -10,10 +10,10 @@ interface IProps {
 
 export const AppendItem = ({ name, price, id }: IProps) => {
   const { curentCurrency } = useCurrencyContext();
-  const { removeExpense } = useExpensesContext();
+  const { removeExpenseItem } = useExpensesContext();
 
   const handleRemove = () => {
-    removeExpense(id);
+    removeExpenseItem(id);
   };
   return (
     <StyledAppendItem>
