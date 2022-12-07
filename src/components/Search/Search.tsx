@@ -1,4 +1,3 @@
-import { ChangeEvent } from "react";
 import { StyledSearch } from "./styles";
 
 interface IProps {
@@ -7,5 +6,5 @@ interface IProps {
 }
 
 export const Search = (props: IProps) => {
-	return <StyledSearch {...props} />;
+  return <StyledSearch {...props} />;
 };

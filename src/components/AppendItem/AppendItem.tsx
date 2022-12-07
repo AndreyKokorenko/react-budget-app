@@ -1,6 +1,5 @@
-import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
-import { useExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
-import { Badge, Button, NameProduct, StyledAppendItem } from "./styles";
+import { useCurrencyContext, useExpensesContext } from "../../context";
+import { Badge, BedgeContainer, Button, NameProduct, StyledAppendItem } from "./styles";
 
 interface IProps {
   name: string;
@@ -15,13 +14,16 @@ export const AppendItem = ({ name, price, id }: IProps) => {
   const handleRemove = () => {
     removeExpenseItem(id);
   };
+
   return (
     <StyledAppendItem>
       <NameProduct>{name}</NameProduct>
-      <Badge>
-        {curentCurrency.value} {price}
-      </Badge>
-      <Button type="button" onClick={handleRemove} />
+      <BedgeContainer>
+        <Badge>
+          {curentCurrency.value} {price}
+        </Badge>
+        <Button type="button" onClick={handleRemove} />
+      </BedgeContainer>
     </StyledAppendItem>
   );
 };

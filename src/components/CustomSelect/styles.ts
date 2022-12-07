@@ -4,21 +4,25 @@ import { ICurrency } from "../../context/CurrencyContext/types";
 export const styles: StylesConfig<ICurrency> = {
   control: (baseStyles) => ({
     ...baseStyles,
-    border: "1px solid #EEEEEE",
     width: "73px",
     height: "30px",
+
+    border: "1px solid #EEEEEE",
     borderRadius: "5px",
   }),
   menu: (baseStyles) => ({
     ...baseStyles,
-    border: "1px solid #EEEEEE",
-    width: "73px",
     textAlign: "center",
+
+    width: "73px",
+
+    border: "1px solid #EEEEEE",
   }),
   singleValue: (baseStyles) => ({
     ...baseStyles,
-    fontSize: "12px",
     margin: "auto",
+
+    fontSize: "12px",
   }),
   valueContainer: (baseStyles) => ({
     ...baseStyles,

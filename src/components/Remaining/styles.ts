@@ -1,18 +1,21 @@
 import styled from "styled-components";
 
-const StyledRemainder = styled.div`
+const StyledRemaining = styled.div<{ $isOverspending: boolean }>`
   display: flex;
   align-items: center;
+
   height: 100px;
   margin: 20px auto 0;
-  background: #ccd5ff;
+
   border-radius: 10px;
+  background: ${({ $isOverspending }) => ($isOverspending ? "#FF0000" : "#ccd5ff")};
 `;
 
 const Title = styled.p`
   padding: 0 0 0 20px;
+
   font-weight: 500;
   font-size: 20px;
 `;
 
-export { StyledRemainder, Title };
+export { StyledRemaining, Title };

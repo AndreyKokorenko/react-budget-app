@@ -4,6 +4,7 @@ const StyledEntireBudget = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   height: 100px;
   margin: 30px auto 0;
   
@@ -13,6 +14,7 @@ const StyledEntireBudget = styled.div`
 
 const Title = styled.p`
   padding: 0 0 0 20px;
+
   font-weight: 500;
   font-size: 20px;
 `;
@@ -24,7 +26,6 @@ const EditButton = styled.button`
 
   font-weight: 500;
   font-size: 14px;
-  line-height: 1.2;
 
   background: #fff;
   border-radius: 10px;

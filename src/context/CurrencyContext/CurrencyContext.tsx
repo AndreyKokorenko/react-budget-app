@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
-import { Currency } from "../../config/currency";
+import { Currency } from "../../config";
+
 import { ICurrencyContext, ICurrencyContextProviderProps } from "./types";
 
 const CurrencyContext = createContext<ICurrencyContext>({} as ICurrencyContext);
@@ -22,6 +23,10 @@ const useCurrencyContextValue = () => {
       {
         label: "GBR",
         value: Currency.GBR,
+      },
+      {
+        label: "BYN",
+        value: Currency.BYN,
       },
     ],
     setNewCurrency: (curentCurrency) => {

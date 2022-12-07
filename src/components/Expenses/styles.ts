@@ -5,4 +5,13 @@ const StyledExpenses = styled.div`
   flex-direction: column;
 `;
 
-export { StyledExpenses };
+const EmptyLine = styled.ul`
+  text-align: center;
+  
+  margin: 80px 0 80px 0;
+
+  font-weight: 400;
+  font-size: 20px;
+`;
+
+export { StyledExpenses, EmptyLine };

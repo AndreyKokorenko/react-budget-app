@@ -1,16 +1,14 @@
 import { useState, useEffect } from "react";
-import { useExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
-import { IExpense } from "../../context/ExpensesContext/types";
-import { useInput } from "../../hooks/useInput";
-import { AppendList } from "../AppendList/AppendList";
-import { Search } from "../Search/Search";
-import { Title } from "../Title/Title";
-import { StyledExpenses } from "./styles";
+import { AppendList, Search, Title } from "..";
+import { IExpense, useExpensesContext } from "../../context";
+import { useInput } from "../../hooks";
+
+import { EmptyLine, StyledExpenses } from "./styles";
 
 export const Expenses = () => {
   const search = useInput();
   const { expenses } = useExpensesContext();
-  const [filteredExpenses, setFilteredExpenses] = useState<IExpense[]>([]);
+  const [filteredExpenses, setFilteredExpenses] = useState<IExpense[]>(expenses);
 
   useEffect(() => {
     setFilteredExpenses(
@@ -22,7 +20,11 @@ export const Expenses = () => {
     <StyledExpenses>
       <Title lable="Expenses" />
       <Search {...search} type="search" placeholder="search ..." />
-      <AppendList expensesList={filteredExpenses} />
+      {expenses.length ? (
+        <AppendList expensesList={filteredExpenses} />
+      ) : (
+        <EmptyLine>Oooops 🙈</EmptyLine>
+      )}
     </StyledExpenses>
   );
 };

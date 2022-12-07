@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { StyledTitle } from "./styles";
 
 interface IProps {

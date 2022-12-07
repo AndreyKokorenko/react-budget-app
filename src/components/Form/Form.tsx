@@ -1,11 +1,9 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { v4 } from "uuid";
-import { useBudgetContext } from "../../context/BudgetContext";
-import { useExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
-import { IExpense } from "../../context/ExpensesContext/types";
-import { Button } from "../Button/Button";
-import { Title } from "../Title/Title";
-import { Input, StyledForm, Errors } from "./styles";
+import { Button, Title } from "..";
+import { IExpense, useBudgetContext, useExpensesContext } from "../../context";
+
+import { StyledForm, Errors, Input } from "./styles";
 
 export const Form = () => {
   const { budget } = useBudgetContext();
@@ -32,7 +30,7 @@ export const Form = () => {
         type="text"
         {...register("name", {
           required: "Please enter product name!",
-          maxLength: { value: 30, message: "Max 30 symbols" },
+          maxLength: { value: 20, message: "Max 20 symbols" },
           minLength: { value: 3, message: "Min 3 symbols" },
         })}
       />
@@ -42,9 +40,8 @@ export const Form = () => {
         type="number"
         {...register("price", {
           required: "Please enter the price of the product!",
-          maxLength: { value: 10, message: "Max 10 symbols" },
+          maxLength: { value: 8, message: "Max 8 symbols" },
           minLength: { value: 1, message: "Min 1 symbols" },
-          valueAsNumber: true,
         })}
       />
       {errors.price && <Errors>{errors.price.message}</Errors>}

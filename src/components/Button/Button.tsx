@@ -1,4 +1,3 @@
-import { Children, ReactNode } from "react";
 import { StyledButton } from "./styles";
 
 interface IProps {

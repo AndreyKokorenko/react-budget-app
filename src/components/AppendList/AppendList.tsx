@@ -1,15 +1,12 @@
-import { IExpense } from "../../context/ExpensesContext/types";
-import { AppendItem } from "../AppendItem/AppendItem";
-import { EmptyLine, StyledAppendList } from "./styles";
+import { AppendItem } from "..";
+import { IExpense } from "../../context";
+import { StyledAppendList } from "./styles";
 
 interface IProps {
   expensesList: IExpense[];
 }
 
 export const AppendList = ({ expensesList }: IProps) => {
-  if (!expensesList.length) {
-    return <EmptyLine>Oooops 🙈</EmptyLine>;
-  }
   return (
     <StyledAppendList>
       {expensesList.map(({ name, price, id }) => (

@@ -1,19 +1,15 @@
-import { CustomSelect } from "../CustomSelect/CustomSelect";
-import { EntireBudget } from "../EntireBudget/EntireBudget";
-import { Remainder } from "../Remainder/Remainder";
-import { Spent } from "../Spent/Spent";
-import { Title } from "../Title/Title";
+import { CustomSelect, EntireBudget, Remaining, Spent, Title } from "..";
 import { HeaderBudget, StyledBudget } from "./styles";
 
 export const Budget = () => {
   return (
     <StyledBudget>
       <HeaderBudget>
-        <Title lable="Budget App"/>
+        <Title lable="Budget App" />
         <CustomSelect />
       </HeaderBudget>
       <EntireBudget />
-      <Remainder />
+      <Remaining />
       <Spent />
     </StyledBudget>
   );
