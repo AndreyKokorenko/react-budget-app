@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AddBudgetInput } from "..";
+import { BudgetInput } from "..";
 import { useBudgetContext, useCurrencyContext } from "../../context";
 import { useInput } from "../../hooks";
 import { EditButton, StyledEntireBudget, Title } from "./styles";
@@ -12,7 +12,7 @@ export const EntireBudget = () => {
   const enteredBudget = useInput();
 
   const handleValue = () => {
-    setNewBudget(+enteredBudget.value.slice(0, 9));
+    setNewBudget(+enteredBudget.value.slice(0, 8));
   };
 
   const handleEnterBudget = () => {
@@ -20,6 +20,7 @@ export const EntireBudget = () => {
     setIsEdit((isEdit) => !isEdit);
     handleValue();
   };
+
   return (
     <StyledEntireBudget>
       {!isEdit ? (
@@ -28,7 +29,11 @@ export const EntireBudget = () => {
           {budget}
         </Title>
       ) : (
-        <AddBudgetInput type={"number"} placeholder={"Enter budget ..."} {...enteredBudget} />
+        <BudgetInput
+          type={"number"}
+          placeholder={"Enter budget ..."}
+          {...enteredBudget}
+        />
       )}
       <EditButton type="button" onClick={handleEnterBudget}>
         {label}

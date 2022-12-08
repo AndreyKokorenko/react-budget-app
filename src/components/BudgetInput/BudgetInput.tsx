@@ -8,6 +8,6 @@ interface IProps {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const AddBudgetInput = (props: IProps) => {
+export const BudgetInput = (props: IProps) => {
   return <StyledInput {...props} />;
 };

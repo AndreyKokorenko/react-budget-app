@@ -1,4 +1,4 @@
-import { AddBudgetInput } from "./AddBudgetInput/AddBudgetInput";
+import { BudgetInput } from "./BudgetInput/BudgetInput";
 import { AppendItem } from "./AppendItem/AppendItem";
 import { AppendList } from "./AppendList/AppendList";
 import { Budget } from "./Budget/Budget";
@@ -14,7 +14,7 @@ import { Spent } from "./Spent/Spent";
 import { Title } from "./Title/Title";
 
 export {
-  AddBudgetInput,
+  BudgetInput,
   AppendItem,
   AppendList,
   Budget,
