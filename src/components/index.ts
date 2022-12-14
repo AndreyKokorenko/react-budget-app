@@ -1,6 +1,6 @@
 import { BudgetInput } from "./BudgetInput/BudgetInput";
-import { AppendItem } from "./AppendItem/AppendItem";
-import { AppendList } from "./AppendList/AppendList";
+import { ExpensesItem } from "./ExpensesItem/ExpensesItem";
+import { ExpensesList } from "./ExpensesList/ExpensesList";
 import { Budget } from "./Budget/Budget";
 import { Button } from "./Button/Button";
 import { CustomSelect } from "./CustomSelect/CustomSelect";
@@ -15,8 +15,8 @@ import { Title } from "./Title/Title";
 
 export {
   BudgetInput,
-  AppendItem,
-  AppendList,
+  ExpensesItem,
+  ExpensesList,
   Budget,
   Button,
   CustomSelect,

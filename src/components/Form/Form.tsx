@@ -45,7 +45,7 @@ export const Form = () => {
         })}
       />
       {errors.price && <Errors>{errors.price.message}</Errors>}
-      <Button type={"submit"} label={"Done"} />
+      <Button type="submit" label="Done" />
     </StyledForm>
   );
 };

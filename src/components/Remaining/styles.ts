@@ -8,7 +8,7 @@ const StyledRemaining = styled.div<{ $isOverspending: boolean }>`
   margin: 20px auto 0;
 
   border-radius: 10px;
-  background: ${({ $isOverspending }) => ($isOverspending ? "#FF0000" : "#ccd5ff")};
+  background: ${({ $isOverspending }) => ($isOverspending ? "#ccd5ff" : "#FF0000")};
 `;
 
 const Title = styled.p`

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { AppendList, Search, Title } from "..";
+import { ExpensesList, Search, Title } from "..";
 import { IExpense, useExpensesContext } from "../../context";
-import { useInput } from "../../hooks";
+import { useDebounce, useInput } from "../../hooks";
 
 import { EmptyLine, StyledExpenses } from "./styles";
 
@@ -9,19 +9,22 @@ export const Expenses = () => {
   const search = useInput();
   const { expenses } = useExpensesContext();
   const [filteredExpenses, setFilteredExpenses] = useState<IExpense[]>(expenses);
+  const debouncedValue = useDebounce(search.value, 700);
 
   useEffect(() => {
     setFilteredExpenses(
-      expenses.filter((expense) => expense.name.toLowerCase().includes(search.value.toLowerCase()))
+      expenses.filter((expense) =>
+        expense.name.toLowerCase().includes(debouncedValue.toLowerCase())
+      )
     );
-  }, [search.value, expenses]);
+  }, [debouncedValue, expenses]);
 
   return (
     <StyledExpenses>
       <Title lable="Expenses" />
-      <Search {...search} type="search" placeholder="search ..." />
-      {expenses.length ? (
-        <AppendList expensesList={filteredExpenses} />
+      <Search type="search" {...search} placeholder="search ..." />
+      {filteredExpenses.length ? (
+        <ExpensesList expensesList={filteredExpenses} />
       ) : (
         <EmptyLine>Oooops 🙈</EmptyLine>
       )}

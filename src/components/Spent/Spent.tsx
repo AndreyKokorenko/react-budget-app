@@ -5,13 +5,13 @@ export const Spent = () => {
   const { curentCurrency } = useCurrencyContext();
   const { expenses } = useExpensesContext();
 
-  const spentSoFar = expenses.reduce((totalExpenses, { price }) => totalExpenses + +price, 0);
+  const spentSum = expenses.reduce((totalExpenses, { price }) => totalExpenses + +price, 0);
 
   return (
     <StyledSpent>
       <Title>
         Spent so far: {curentCurrency.value}
-        {spentSoFar}
+        {spentSum}
       </Title>
     </StyledSpent>
   );

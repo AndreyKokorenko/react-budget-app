@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   grid-row-gap: 30px;
 
   margin: auto;
-  width: 375px;
+  width: 100%;
   padding: 30px 20px 43px;
 
   background-color: white;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import close from "../../assets/close.png";
 
-const StyledAppendItem = styled.li`
+const StyledExpensesItem = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,4 +42,4 @@ const Badge = styled.span`
   color: white;
 `;
 
-export { StyledAppendItem, NameProduct, Button, Badge, BedgeContainer };
+export { StyledExpensesItem, NameProduct, Button, Badge, BedgeContainer };
